@@ -16,10 +16,12 @@
 
 .wxq-bind{margin-top:18px;padding:14px 16px;display:flex;align-items:center;gap:12px;background:linear-gradient(110deg,#251c33,#191623 70%);border:1px solid #473650;border-radius:13px}.wxq-bind-icon{width:46px;height:46px;flex:0 0 46px;display:grid;place-items:center;border-radius:12px;border:1px solid #896154;color:#ffba94;background:#392638;overflow:hidden}.wxq-bind-icon img{width:100%;height:100%;object-fit:cover}.wxq-bind-icon svg{width:23px}.wxq-bind-info{min-width:0;flex:1}.wxq-bind-info strong,.wxq-bind-info small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.wxq-bind-info small{color:var(--muted);margin-top:2px;font-size:12px}.wxq-bind-btn,.wxq-auth button{min-height:44px;border-radius:8px;padding:0 16px;border:1px solid transparent;font-weight:750}.wxq-bind-btn{background:#ff9066;color:#21121b;white-space:nowrap}.wxq-bind-btn:hover{background:#ffab8a}.wxq-bind-btn.is-bound{border-color:#996d6b;background:#392638;color:#ffd5bd}.wxq-bind-feedback{margin:6px 0 0;color:#f8cfb8;font-size:12px}.wxq-bind-feedback:empty{display:none}.wxq-auth{width:min(450px,calc(100% - 28px));padding:0;border:0;border-radius:14px;overflow:hidden;background:#fff;color:#241e28;color-scheme:light;box-shadow:0 16px 70px #0008}.wxq-auth::backdrop{background:#100a1bb3}.wxq-auth [hidden]{display:none!important}.wxq-auth-head{background:#d94417;color:#fff;padding:0 10px 0 17px;display:flex;align-items:center;justify-content:space-between;min-height:49px}.wxq-auth h2{font-size:16px;margin:0}.wxq-auth button.wxq-auth-close{background:none;color:white;font-size:22px;padding:0;width:44px}.wxq-auth-body{padding:17px}.wxq-auth-body p{margin:0 0 13px;font-size:14px}.wxq-auth-note{color:#61586a;font-size:12px!important}.wxq-auth-actions{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap}.wxq-auth-secondary{border-color:#d1c2ce!important;color:#6a3440;background:#fff}.wxq-auth-primary{background:#d94417;color:#fff}.wxq-auth-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.wxq-auth-options button[aria-pressed=true]{border-color:#b53717!important;background:#ffede6}.wxq-auth button:focus-visible{outline-color:#733c97}@media(max-width:480px){.wxq-bind{padding:10px;gap:8px}.wxq-bind-btn{padding:0 10px;font-size:13px}.wxq-bind-info strong{font-size:14px}.wxq-bind-info small{font-size:11px}}
 #amb-empty[hidden],#board[hidden],#podium[hidden]{display:none}#amb-empty{margin-bottom:14px;padding:26px 16px;border:1px solid var(--line);border-radius:14px;background:var(--panel);text-align:center}#amb-empty img{width:48px;height:48px;object-fit:cover;border-radius:50%;border:1px solid #9e85bb}#amb-empty h3{margin:8px 0 4px;font-size:16px}#amb-empty p{margin:0;color:var(--muted)}#amb-empty button{margin:12px auto 0;min-height:44px;padding:0 14px;border:1px solid #876aaa;border-radius:8px;background:#39274d}.lord-choice.is-empty:not([aria-pressed=true]) img{filter:saturate(.45);opacity:.7}.lord-choice small{font-size:10px;color:var(--muted)}
+#wxq-account-module[hidden],#wxq-view-switch[hidden]{display:none}.wxq-view-switch{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:6px;margin-top:12px;color:var(--muted);font-size:12px}.wxq-view-switch button{border:1px solid #493959;border-radius:7px;background:#1c1728;padding:0 11px;min-height:44px}.wxq-view-switch button:hover{background:#362647}.wxq-view-switch button[aria-pressed=true]{background:#48305c;border-color:#ad89cd;color:#fff}
 </style></head><body>
 <header class="site"><div class="shell"><a href="https://www.douyu.com/" class="brand" aria-label="斗鱼首页">斗鱼</a><span class="sep" aria-hidden="true">/</span><span class="game">王者万象棋</span><a href="https://wxq.qq.com/" class="home" target="_blank" rel="noopener">游戏官网 ↗</a></div></header>
 <section class="hero"><div class="shell"><div class="crumb">斗鱼直播 <span aria-hidden="true">/</span> 王者万象棋专区</div><div class="eyebrow">WANXIANGQI · LEADERBOARD</div><h1>主播<span>巅峰榜</span></h1><p>看主播的游戏排名，直达斗鱼直播间。</p><div class="pills"><span class="pill" id="season">赛季展示示例</span><span class="pill demo" id="mode">演示数据 · 未连接游戏</span></div></div></section>
-<div class="shell"><section class="wxq-bind" aria-label="游戏账号绑定"><span class="wxq-bind-icon" id="wxq-account-icon" aria-hidden="true"></span><div class="wxq-bind-info" aria-live="polite"><strong id="wxq-account-name">绑定游戏账号</strong><small id="wxq-account-label">授权关联《王者万象棋》游戏角色</small></div><button class="wxq-bind-btn" id="wxq-account-action" type="button">去绑定</button></section><p id="wxq-account-feedback" class="wxq-bind-feedback" role="status"></p></div>
+<div class="shell" id="wxq-view-switch" hidden><div class="wxq-view-switch" role="group" aria-label="原型视角"><span>原型演示视角</span><button id="wxq-view-user" type="button" aria-pressed="true">用户视角</button><button id="wxq-view-anchor" type="button" aria-pressed="false">主播视角</button></div></div>
+<div class="shell" id="wxq-account-module" hidden><section class="wxq-bind" aria-label="游戏账号绑定"><span class="wxq-bind-icon" id="wxq-account-icon" aria-hidden="true"></span><div class="wxq-bind-info" aria-live="polite"><strong id="wxq-account-name">绑定游戏账号</strong><small id="wxq-account-label">授权关联《王者万象棋》游戏角色</small></div><button class="wxq-bind-btn" id="wxq-account-action" type="button">去绑定</button></section><p id="wxq-account-feedback" class="wxq-bind-feedback" role="status"></p></div>
 <dialog class="wxq-auth" id="wxq-auth" aria-labelledby="wxq-auth-title"><header class="wxq-auth-head"><h2 id="wxq-auth-title">提示</h2><button type="button" class="wxq-auth-close" id="wxq-auth-close" aria-label="关闭">×</button></header><div class="wxq-auth-body" id="wxq-consent"><p>即将前往第三方网页「腾讯游戏来联」完成账号授权。您同意后，斗鱼将按绑定协议向来联提供完成绑定所需的信息。</p><p class="wxq-auth-note" id="wxq-consent-note"></p><div class="wxq-auth-actions"><button type="button" class="wxq-auth-secondary" id="wxq-consent-deny" autofocus>拒绝</button><button type="button" class="wxq-auth-primary" id="wxq-consent-yes">同意并前往</button></div></div><div class="wxq-auth-body" id="wxq-auth-demo" hidden><p><strong>腾讯游戏来联 · 授权流程演示</strong></p><p class="wxq-auth-note">当前未连接来联，不会跳到真实授权页面，也不会收集或发送任何账号信息。</p><div class="wxq-auth-options" role="group" aria-label="选择演示账号类型"><button type="button" id="wxq-demo-qq" class="wxq-auth-secondary" aria-pressed="false">QQ 账号（演示）</button><button type="button" id="wxq-demo-wechat" class="wxq-auth-secondary" aria-pressed="false">微信账号（演示）</button></div><div class="wxq-auth-actions"><button type="button" id="wxq-demo-cancel" class="wxq-auth-secondary">取消授权</button><button type="button" id="wxq-demo-ok" class="wxq-auth-primary" disabled>模拟授权成功</button></div></div></dialog>
 <main class="shell boards"><div class="tabs" role="tablist" aria-label="王者万象棋榜单"><button class="tab" role="tab" id="tab-match" aria-controls="board-panel" aria-selected="true" data-key="match"><i>01</i> 万象大赛</button><button class="tab" role="tab" id="tab-ambassador" aria-controls="board-panel" aria-selected="false" tabindex="-1" data-key="ambassador"><i>02</i> 棋手代言</button><button class="tab" role="tab" id="tab-power" aria-controls="board-panel" aria-selected="false" tabindex="-1" data-key="power"><i>03</i> 战力巅峰</button></div>
 <div class="data-alert" role="status" id="alert" hidden></div><section id="board-panel" role="tabpanel" aria-labelledby="tab-match" tabindex="0"><div class="intro"><div><div class="kicker">GAME RANKING</div><h2 id="board-title">万象大赛</h2><p class="meta" id="board-desc"></p></div><button class="switch" id="live-only" type="button" aria-pressed="false">只看开播</button></div><div class="lord-picker" id="lord-picker" hidden><p class="lord-caption"><strong id="lord-current" aria-live="polite"></strong><span>滑动查看更多棋手</span></p><div id="lord-strip" class="lord-strip" role="group" aria-label="选择棋手分榜"></div></div><div class="podium" id="podium" aria-label="榜内前三条记录"></div><div id="amb-empty" role="status" hidden></div><div class="board" id="board" role="table" aria-label="主播游戏排名"></div><p id="count" class="legal" role="status"></p></section>
@@ -168,12 +170,15 @@ if(!demo){$('#mode').textContent='游戏榜单';$('#mode').classList.remove('dem
 const el=id=>document.getElementById(id), cfg=window.OPENCLAW_WXQ_ACCOUNT;
 const localPath=x=>typeof x==='string'&&/^\/(?![\/\\])[^\\\s]*$/.test(x);
 const live=Boolean(cfg&&localPath(cfg.status)&&localPath(cfg.start));
+const prototype=!cfg&&!endpoint;
+const accountModule=el('wxq-account-module');
 const storageKey='wxq-demo-game-binding-v1';
 const profiles={qq:{nickname:'星河落子',avatar:'assets/avatar0.jpg',channel:'QQ'},wechat:{nickname:'小鹿弈手',avatar:'assets/avatar1.jpg',channel:'微信'}};
 const badge='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M5.5 16a3.5 3.5 0 017 0M15 10h3m-3 4h3"/></svg>';
 const modal=el('wxq-auth'), action=el('wxq-account-action');
-let account=null, channel='', loadError=false;
+let account=null, channel='', loadError=false, eligible=false;
 function drawAccount(){
+ accountModule.hidden=!eligible;
  const icon=el('wxq-account-icon');icon.innerHTML=badge;
  el('wxq-account-name').textContent=account?.nickname||'绑定游戏账号';
  el('wxq-account-label').textContent=account?(live?'《王者万象棋》 · 已绑定':`《王者万象棋》 · 已绑定（${account.channel}演示）`):'授权关联《王者万象棋》游戏角色';
@@ -184,12 +189,13 @@ function drawAccount(){
 function feedback(message=''){el('wxq-account-feedback').textContent=message;}
 async function refresh(){
  action.disabled=true;loadError=false;feedback();
- try{const response=await fetch(cfg.status,{credentials:'same-origin',cache:'no-store',redirect:'error'});if(!response.ok)throw Error('status');const data=await response.json();if(data.bound===true&&typeof data.nickname==='string'&&data.nickname.trim()){account={nickname:data.nickname,avatar:typeof data.avatar==='string'?data.avatar:''};}else if(data.bound===false){account=null;}else{throw Error('shape');}}
+ try{const response=await fetch(cfg.status,{credentials:'same-origin',cache:'no-store',redirect:'error'});if(!response.ok)throw Error('status');const data=await response.json();if(data.isStreamer!==true){eligible=false;account=null;if(modal.open)modal.close();return;}eligible=true;if(data.bound===true&&typeof data.nickname==='string'&&data.nickname.trim()){account={nickname:data.nickname,avatar:typeof data.avatar==='string'?data.avatar:''};}else if(data.bound===false){account=null;}else{throw Error('shape');}}
  catch{loadError=true;feedback('暂时无法读取绑定状态，请重试。');}finally{action.disabled=false;drawAccount();}
 }
 function choose(value){channel=value;for(const id of ['qq','wechat'])el('wxq-demo-'+id).setAttribute('aria-pressed',id===value);el('wxq-demo-ok').disabled=!channel;}
 function dismiss(){modal.close();}
 action.addEventListener('click',()=>{
+ if(!eligible)return;
  if(loadError){refresh();return;}
  el('wxq-consent').hidden=false;el('wxq-auth-demo').hidden=true;choose('');
  el('wxq-auth-title').textContent=account?'换绑游戏账号':'提示';
@@ -198,17 +204,23 @@ action.addEventListener('click',()=>{
 });
 for(const id of ['wxq-auth-close','wxq-consent-deny','wxq-demo-cancel'])el(id).addEventListener('click',dismiss);
 el('wxq-consent-yes').addEventListener('click',()=>{
+ if(!eligible)return;
  if(live){const url=new URL(cfg.start,location.origin);url.searchParams.set('mode',account?'replace':'bind');location.assign(url.href);return;}
  el('wxq-consent').hidden=true;el('wxq-auth-demo').hidden=false;el('wxq-auth-title').textContent='游戏账号绑定（演示）';el('wxq-demo-qq').focus();
 });
 for(const id of ['qq','wechat'])el('wxq-demo-'+id).addEventListener('click',()=>choose(id));
 el('wxq-demo-ok').addEventListener('click',()=>{
- if(live||!channel)return;
+ if(!prototype||!eligible||!channel)return;
  const replacing=Boolean(account);account=profiles[channel];
  try{sessionStorage.setItem(storageKey,channel);}catch{}
  drawAccount();dismiss();feedback(replacing?'演示账号已换绑。':'演示账号绑定成功。');
 });
-if(!live){try{const key=sessionStorage.getItem(storageKey);account=key==='qq'||key==='wechat'?profiles[key]:null;}catch{}drawAccount();}
-else{drawAccount();refresh();window.addEventListener('pageshow',e=>{if(e.persisted)refresh();});}
+if(prototype){
+ const setView=isAnchor=>{eligible=isAnchor;if(!isAnchor&&modal.open)modal.close();feedback();el('wxq-view-user').setAttribute('aria-pressed',!isAnchor);el('wxq-view-anchor').setAttribute('aria-pressed',isAnchor);drawAccount();};
+ try{const key=sessionStorage.getItem(storageKey);account=key==='qq'||key==='wechat'?profiles[key]:null;}catch{}
+ el('wxq-view-switch').hidden=false;setView(false);
+ el('wxq-view-user').addEventListener('click',()=>setView(false));
+ el('wxq-view-anchor').addEventListener('click',()=>setView(true));
+}else if(live){drawAccount();refresh();window.addEventListener('pageshow',e=>{if(e.persisted){eligible=false;account=null;if(modal.open)modal.close();drawAccount();refresh();}});}
 })();
 </script></body></html>
